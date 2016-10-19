@@ -5,10 +5,10 @@
 
 $(function () {
 	'use strict';
-	
+
 	var width = $(window).width();
 	var height = $(window).height();
-	
+
 	/* Preloader */
 	$(window).on('load', function() {
 		$(".preloader .spinner").fadeOut(function(){
@@ -43,16 +43,16 @@ $(function () {
 	$('.top-menu ul li a').on('click', function(){
 		var id = $(this).attr('href');
 		var h = parseFloat($(id).offset().top);
-		
+
 		$('body,html').animate({
 			scrollTop: h
 		}, 800);
-		
+
 		return false;
 	});
 	$('.section').on('click', '.contact-btn', function(){
 		$('.top-menu li a[href="#contact-section"]').click();
-		
+
 		return false;
 	});
 
@@ -71,7 +71,7 @@ $(function () {
 	$(window).on('scroll', function(){
 		if ($(this).scrollTop() > 100) {
 			$('.top-menu').addClass('fixed');
-		} 
+		}
 		else {
 			$('.top-menu').removeClass('fixed');
 		}
@@ -111,7 +111,7 @@ $(function () {
 			left: x + 'px'
 		}).addClass("animate");
 	});
-	
+
 	/* Validate contact form */
 	$("#cform").validate({
 		rules: {
@@ -135,10 +135,10 @@ $(function () {
 			$('.alert-success').delay(1000).fadeIn();
 		}
 	});
-	
+
 	/* Initialize masonry items */
 	var $container = $('.box-items');
-	
+
 	$container.imagesLoaded(function(){
 		$container.multipleFilterMasonry({
 			itemSelector: '.box-item',
@@ -147,7 +147,7 @@ $(function () {
 			gutter: 0
 		});
 	});
-	
+
 	/* 12. Initialize masonry filter */
 	$('.filters label').on('change', 'input[type="radio"]', function() {
 		if ($(this).is(':checked')) {
@@ -162,7 +162,7 @@ $(function () {
 			mainClass: 'mfp-fade'
 		});
 	});
-	
+
 	/* Portfolio magnific popup */
 	$('.has-popup').magnificPopup({
 		type: 'inline',
@@ -175,7 +175,7 @@ $(function () {
 
 /* Google Map Options */
 function initMap() {
-	var myLatlng = new google.maps.LatLng(40.773328,-73.960088); // <- Your latitude and longitude
+	var myLatlng = new google.maps.LatLng(39.0997,-94.5786); // <- Your latitude and longitude
 	var styles = [
 	{
 		"featureType": "water",
@@ -243,7 +243,7 @@ function initMap() {
 		scrollwheel: false,
 		styles: styles
 	}
-	
+
 	var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 	var marker = new google.maps.Marker({
 		position: myLatlng,
